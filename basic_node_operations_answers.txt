@@ -1,0 +1,53 @@
+Questions
+
+
+
+1. Run the commands sort, wc and uniq on the commands.js file. Explain how they work and what the output was.
+
+Sorts sorts each function line by line alphabetically, 
+
+ '''break;
+       break;
+       commandLibrary.cat(userInputArray.slice(1));
+       commandLibrary.echo(userInputArray.slice(1).join(" "));
+       const fileName = fullPath[0];
+       done(userInput);
+       fs.readFile(fileName, (err, data) => {'''
+
+WC returns the newlines for each file, the word count for each files, number of bytes of the file.
+
+ '''wc commands.js
+  41  113 1126 commands.js
+
+uniq returns a line of code only if it is different from the line above it.
+
+ const commandLibrary = {
+  "echo": function(userInput) {
+       done(userInput);
+   },
+    "cat": function(fullPath) {
+       const fileName = fullPath[0];
+       fs.readFile(fileName, (err, data) => {
+           if (err) throw err;
+           done(data);
+       });'''
+
+
+
+
+2. Using the pipe (|) connect at least two commands and run it on commands.js. Explain what the output was and why the specific data 
+was outputted.
+
+
+ '''sort commands.js | uniq
+           done(data);
+           if (err) throw err;
+       });
+       break;
+       commandLibrary.cat(userInputArray.slice(1));
+       commandLibrary.echo(userInputArray.slice(1).join(" "));
+       const fileName = fullPath[0];
+       done(userInput);
+       fs.readFile(fileName, (err, data) => {'''
+ 
+The ouputted data is sort alphabetically line by line and only included if different from the above lines of code.
